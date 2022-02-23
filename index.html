@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>toy app</title>
+  </head>
+  <body>
+    <h1>toy app</h1>
+    <button id="login-button" type="button" onclick="test()">Open login window</button>
+  </body>
+  <script>
+      function test() {
+        const { ipcRenderer } = require('electron');
+            ipcRenderer.send('ABCD', 1234);
+      }
+    // const { ipcRenderer } = require('electron');
+    //     let data = /*some data*/;
+    //     whenSomethingHappens => {ipcRenderer.send('ABCD', data);}
+    </script>
+</html>
